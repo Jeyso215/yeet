@@ -13,7 +13,7 @@ const discordTimeout = 500;
 const date = new Date();
 date.setDate(date.getDate() - config.purge.keep_days);
 const maxId = date2Snowflake(date);
-let bar: ProgressBar;
+let bar: ProgressBar | undefined;
 
 async function yeetChan(token: string, data: any, real_max_id: string) {
   let ignored: string[] = [];
@@ -113,7 +113,7 @@ async function yeet() {
       );
       if (bar) {
         bar.terminate();
-        bar = null;
+        bar = undefined;
       }
     }
 
@@ -132,7 +132,7 @@ async function yeet() {
       );
       if (bar) {
         bar.terminate();
-        bar = null;
+        bar = undefined;
       }
     }
   }
