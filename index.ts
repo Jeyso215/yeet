@@ -113,6 +113,7 @@ async function yeet() {
       );
       if (bar) {
         bar.terminate();
+        bar = null;
       }
     }
 
@@ -131,6 +132,7 @@ async function yeet() {
       );
       if (bar) {
         bar.terminate();
+        bar = null;
       }
     }
   }
