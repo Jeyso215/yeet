@@ -1,0 +1,6 @@
+discord:
+  tokens:
+    - "YOUR TOKEN GOES HERE"
+purge:
+  enabled: true
+  keep_days: 3
