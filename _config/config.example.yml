@@ -1,6 +1,13 @@
+yeet:
+  run: once #once or https://breejs.github.io/later/parsers.html#text
 discord:
   tokens:
     - "YOUR TOKEN GOES HERE"
 purge:
   enabled: true
   keep_days: 3
+ignore: #optional
+  servers:
+    - "SERVER ID"
+  users:
+    - "USER ID"

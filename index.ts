@@ -2,6 +2,7 @@ import { date2Snowflake, log, sleep } from "./common";
 import config from "./config";
 import * as DiscordAPI from "./DiscordAPI";
 import ProgressBar from "progress";
+import later from "@breejs/later";
 
 if (!config.purge.enabled) {
   throw new Error(
@@ -102,6 +103,14 @@ async function yeet() {
           ""
         )
       );
+      if (
+        chan.recipients.length === 1 &&
+        config.ignore?.users?.includes(chan.recipients[0].id)
+      ) {
+        log("---- ignoring...");
+        continue;
+      }
+
       await yeetChan(
         token,
         {
@@ -121,6 +130,11 @@ async function yeet() {
     const servers = await DiscordAPI.getOfType(token, "guild");
     for (const chan of servers) {
       log("---- ", chan.name);
+      if (config.ignore?.servers?.includes(chan.id)) {
+        log("---- ignoring...");
+        continue;
+      }
+
       await yeetChan(
         token,
         {
@@ -138,4 +152,9 @@ async function yeet() {
   }
 }
 
-yeet();
+if (config.yeet.run === "once") {
+  yeet();
+} else {
+  const parsed = later.parse.text(config.yeet.run);
+  later.setInterval(yeet, parsed);
+}
