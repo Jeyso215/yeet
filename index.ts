@@ -43,7 +43,7 @@ async function yeetChan(token: string, data: any, real_max_id: string) {
     const resMessages = res.messages;
 
     if (!res.total_results || res.total_results == 0 || !resMessages) {
-      return;
+      break;
     }
 
     if (!bar) {
@@ -82,6 +82,8 @@ async function yeetChan(token: string, data: any, real_max_id: string) {
       }
     }
   }
+
+  await sleep(2000);
 }
 
 async function yeet() {
@@ -155,6 +157,7 @@ async function yeet() {
 if (config.yeet.run === "once") {
   yeet();
 } else {
+  later.date.localTime();
   const parsed = later.parse.text(config.yeet.run);
   later.setInterval(yeet, parsed);
 }
