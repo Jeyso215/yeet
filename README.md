@@ -1,5 +1,7 @@
 # yeet
 
+**/!\ warning: discord may yeet your account in return if you use this, never had issues myself though**
+
 automagically yeet ur old discord msgs
 
 discord raised rate limits on their delete endpoints :c now can't just run socialnuke every once in a while, automated pruning is needed
