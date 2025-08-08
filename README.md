@@ -18,7 +18,7 @@ discord raised rate limits on their delete endpoints :c now can't just run socia
 - copy \_config/config.example.yml to \_config/config.yml and edit
 - setting the token is necessary ("YOUR TOKEN GOES HERE")
 - switch the "run" value from "once" to e.g. "at 1:20 am" (it uses ur local time) - see [this doc](https://breejs.github.io/later/parsers.html#text) for values
-- you can use [this guide to get a token](https://github.com/Tyrrrz/DiscordChatExporter/wiki/Obtaining-Token-and-Channel-IDs) (better way soon)
+- you can use [this guide to get a token](https://github.com/Tyrrrz/DiscordChatExporter/blob/master/.docs/Token-and-IDs.md)
 
 ## use
 
